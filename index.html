@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Result System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="main-container">
+
+        <!-- HEADER -->
+        <div class="header">
+
+            <div class="cap">🎓</div>
+
+            <h1>Student Result System</h1>
+
+        </div>
+
+
+        <!-- MAIN CONTENT -->
+        <div class="content">
+
+            <!-- LEFT SIDE -->
+            <div class="card input-card">
+
+                <h2>Enter Student Details</h2>
+
+                <form id="resultForm">
+
+                    <!-- Roll Number -->
+                    <label for="rollNo">Roll Number</label>
+
+                    <input
+                        type="text"
+                        id="rollNo"
+                        placeholder="Example: 25b111cs068"
+                        required
+                    >
+
+
+                    <!-- Student Name -->
+                    <label for="name">Student Name</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter Student Name"
+                        required
+                    >
+
+
+                    <!-- Department -->
+                    <label for="department">Department</label>
+
+                    <input
+                        type="text"
+                        id="department"
+                        placeholder="Example: CSE"
+                        required
+                    >
+
+
+                    <!-- C++ -->
+                    <label for="cpp">C++ Marks</label>
+
+                    <input
+                        type="number"
+                        id="cpp"
+                        min="0"
+                        max="100"
+                        placeholder="Enter C++ marks"
+                        required
+                    >
+
+
+                    <!-- DBMS -->
+                    <label for="dbms">DBMS Marks</label>
+
+                    <input
+                        type="number"
+                        id="dbms"
+                        min="0"
+                        max="100"
+                        placeholder="Enter DBMS marks"
+                        required
+                    >
+
+
+                    <!-- Agile -->
+                    <label for="agile">Agile Marks</label>
+
+                    <input
+                        type="number"
+                        id="agile"
+                        min="0"
+                        max="100"
+                        placeholder="Enter Agile marks"
+                        required
+                    >
+
+
+                    <!-- Maths -->
+                    <label for="maths">Maths Marks</label>
+
+                    <input
+                        type="number"
+                        id="maths"
+                        min="0"
+                        max="100"
+                        placeholder="Enter Maths marks"
+                        required
+                    >
+
+
+                    <!-- ADSAA -->
+                    <label for="adsaa">ADSAA Marks</label>
+
+                    <input
+                        type="number"
+                        id="adsaa"
+                        min="0"
+                        max="100"
+                        placeholder="Enter ADSAA marks"
+                        required
+                    >
+
+
+                    <!-- DAE -->
+                    <label for="dae">DAE Marks</label>
+
+                    <input
+                        type="number"
+                        id="dae"
+                        min="0"
+                        max="100"
+                        placeholder="Enter DAE marks"
+                        required
+                    >
+
+
+                    <!-- BUTTON -->
+                    <button type="submit">
+                        Calculate Result
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- RIGHT SIDE -->
+            <div class="card result-card">
+
+                <h2>Student Result</h2>
+
+                <div id="resultData">
+
+                    <!-- Student Details -->
+
+                    <div class="student-details">
+
+                        <p>
+                            <span class="result-label">Roll Number</span>
+                            <span class="colon">:</span>
+                            <span id="displayRoll">-</span>
+                        </p>
+
+                        <p>
+                            <span class="result-label">Name</span>
+                            <span class="colon">:</span>
+                            <span id="displayName">-</span>
+                        </p>
+
+                        <p>
+                            <span class="result-label">Department</span>
+                            <span class="colon">:</span>
+                            <span id="displayDepartment">-</span>
+                        </p>
+
+                    </div>
+
+
+                    <hr>
+
+
+                    <!-- SUBJECT MARKS -->
+
+                    <h3>Subject Marks</h3>
+
+                    <p>
+                        <span class="result-label">C++</span>
+                        <span class="colon">:</span>
+                        <span id="displayCpp">-</span>
+                    </p>
+
+                    <p>
+                        <span class="result-label">DBMS</span>
+                        <span class="colon">:</span>
+                        <span id="displayDbms">-</span>
+                    </p>
+
+                    <p>
+                        <span class="result-label">Agile</span>
+                        <span class="colon">:</span>
+                        <span id="displayAgile">-</span>
+                    </p>
+
+                    <p>
+                        <span class="result-label">Maths</span>
+                        <span class="colon">:</span>
+                        <span id="displayMaths">-</span>
+                    </p>
+
+                    <p>
+                        <span class="result-label">ADSAA</span>
+                        <span class="colon">:</span>
+                        <span id="displayAdsaa">-</span>
+                    </p>
+
+                    <p>
+                        <span class="result-label">DAE</span>
+                        <span class="colon">:</span>
+                        <span id="displayDae">-</span>
+                    </p>
+
+
+                    <hr>
+
+
+                    <!-- TOTAL -->
+
+                    <p>
+                        <span class="result-label">Total</span>
+                        <span class="colon">:</span>
+                        <strong id="displayTotal">-</strong>
+                    </p>
+
+
+                    <!-- AVERAGE -->
+
+                    <p>
+                        <span class="result-label">Average</span>
+                        <span class="colon">:</span>
+                        <strong id="displayAverage">-</strong>
+                    </p>
+
+
+                    <!-- GRADE -->
+
+                    <p>
+                        <span class="result-label">Grade</span>
+                        <span class="colon">:</span>
+                        <strong id="displayGrade">-</strong>
+                    </p>
+
+
+                    <!-- RESULT -->
+
+                    <div class="pass-box">
+
+                        <span class="result-label">Result</span>
+
+                        <span class="colon">:</span>
+
+                        <strong id="displayResult">-</strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
